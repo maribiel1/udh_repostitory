@@ -1,0 +1,62 @@
+# Metadata file
+inventory:
+  inventory_meta_location: "C:/python_projects/udh_repostitory/Redshift_to_Snowflake_Inventory.xlsx"
+  inventory_worksheet_name: "Mapping"
+  inventory_sheet_columns:
+    [
+      "Path",
+      "File_name",
+      "UDH Layer",
+      "Namespace",
+      "Item",
+      "Snowflake table schema",
+      "Snowflake Object Name",
+      "Ready to SF Publish",
+    ]
+  inv_file_path: "Path"
+  inv_file_name: "File_Name"
+  inv_udh_layer: "UDH Layer"
+  inv_namespace: "Namespace"
+  inv_item: "Item"
+  inv_snowflake_table_schema: "Snowflake table schema"
+  inv_snowflake_object_name: "Snowflake Object Name"
+  inv_ready_to_snowflake_publish: "Ready to SF Publish"
+
+# bcg parameters
+target_file_config:
+  target_workbook_file: "C:/python_projects/udh_repostitory/BCG_PUBLISH.xlsx"
+  target_worksheet_name: "Mapping"
+  target_sheet_columns:
+    [
+      "LAYER",
+      "NAMESPACE",
+      "DATA_ITEM",
+      "PUBLISH_TYPE",
+      "PUBLISH_TARGET_CONNECTION",
+      "PUBLISH_TARGET_OBJECT",
+      "PUBLISH_TARGET_CUSTOME_MODE",
+      "PUBLISH_MODE",
+    ]
+  publish_type: "PUBLISHED2"
+  publish_target_connection: "${pgs_udh_snowflake}"
+  publish_custome_mode: ""
+  publish_mode: "SNOWFLAKE"
+
+# Repository path
+udh_repo:
+  repo_path: "C:/udh-pgs/pipeline-configurations/pgs-udh-dev-pl"
+
+# Logging configuration
+logging:
+  version: 1
+  formatters:
+    udhpgs:
+      format: "UDH PGS Transformer - %(asctime)s - %(levelname)s - %(message)s"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: udhpgs
+      level: DEBUG
+  root:
+    level: DEBUG
+    handlers: [console]

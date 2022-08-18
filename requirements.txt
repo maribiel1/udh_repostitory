@@ -1,0 +1,6 @@
+# xlrd==2.1.0
+PyYAML==5.4.1
+pandas==1.4.3
+awscliv2==1.5.2
+openpyxl ==3.0.10
+XlsxWriter==3.0.3

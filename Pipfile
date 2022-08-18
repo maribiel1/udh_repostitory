@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+xlrd = "==1.2.0"
+pyyaml = "==5.4.1"
+pandas = "==1.4.3"
+awscliv2 = "==1.5.2"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
